@@ -7,7 +7,7 @@ import ora from "ora";                 // add a spinner
 import figlet from "figlet";           // Introduce with a big decorated title
 
 
-console.log(chalk.yellow(figlet.textSync("My Node CLI", {horizontalLayout : "full"})));
+console.log(chalk.cyanBright(figlet.textSync("Riyad's Restaurant", {horizontalLayout : "full"})));
 
 
 program
@@ -20,7 +20,7 @@ program.action(()=>{
             {
                 type: "input",
                 name: "name",
-                message : "What is your name? "
+                message : chalk.yellowBright("What is your name? : ")
             },
         ])
             .then((result)=>{
@@ -28,7 +28,7 @@ program.action(()=>{
                     {
                         type: "list",
                         name: "hunger",
-                        message: `Are you hungry ${result.name}? : `,
+                        message: chalk.cyanBright(`Are you hungry ${result.name}? : `),
                         choices : ["Yes", "No"]
                     },
                 ]).then((result)=>{
@@ -37,7 +37,7 @@ program.action(()=>{
                             {
                                 type: "list",
                                 name: "choice",
-                                message: "Okay then choose one from below : ",
+                                message: chalk.blueBright("Okay then choose one from below : "),
                                 choices : ["Pizza", "Burger", "Pasta"]
                             }
                         ]).then((result)=>{
@@ -52,7 +52,6 @@ program.action(()=>{
                             } else {
                                 emoji = '🍝';
                             }
-
 
                             setTimeout(()=>{
                                 spinner.color = "yellow"
