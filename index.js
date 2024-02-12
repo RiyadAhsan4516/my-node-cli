@@ -42,6 +42,7 @@ program.action(()=>{
                             }
                         ]).then((result)=>{
                             const spinner = ora(`Cooking ${result.choice}...`).start();
+                            spinner.color = "red"
 
                             let dish = result.choice;
                             let emoji;
