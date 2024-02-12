@@ -43,9 +43,21 @@ program.action(()=>{
                         ]).then((result)=>{
                             const spinner = ora(`Cooking ${result.choice}...`).start();
 
+                            let dish = result.choice;
+                            let emoji;
+                            if(dish === "Pizza"){
+                                emoji = '🍕'; 
+                            } else if (dish === 'Burger'){
+                                emoji = '🍔';
+                            } else {
+                                emoji = '🍝';
+                            }
+
+
                             setTimeout(()=>{
                                 spinner.color = "yellow"
                                 spinner.succeed(chalk.green("Done cooking!"));
+                                console.log(chalk.magenta(`Here's your ${dish} : ${emoji}`))
                                 console.log(chalk.yellow("Bon appetit !"));
                             }, 3000);
                         })
