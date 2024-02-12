@@ -14,45 +14,6 @@ program
     .version("1.0.0")
     .description("My node CLI")
 
-// program.action(()=>{
-//     inquirer
-//         .prompt([
-//             {
-//                 type: "input",
-//                 name: "name",
-//                 message : "What is your name? "
-//             },
-//             {
-//                 type: "list",
-//                 name: "hunger",
-//                 message: "Are you hungry? : ",
-//                 choices : ["Yes", "No"]
-//             },
-//             {
-//                 type: "list",
-//                 name: "choice",
-//                 message: "Okay then choose one from below : ",
-//                 choices : ["Pizza", "Burger", "Pasta"]
-//             }
-//         ])
-//             .then((result)=>{
-//                 console.log(result)
-
-//                 if(result.hunger === "Yes"){
-//                     const spinner = ora(`Cooking ${result.choice}...`).start();
-
-//                     setTimeout(()=>{
-//                         spinner.color = "yellow"
-//                         spinner.succeed(chalk.green("Done cooking!"));
-//                     }, 3000);
-//                 }
-
-//             })
-// })
-
-
-
-
 program.action(()=>{
     inquirer
         .prompt([
@@ -95,10 +56,5 @@ program.action(()=>{
 
             })
 })
-
-
-
-
-
 
 program.parse(process.argv);
